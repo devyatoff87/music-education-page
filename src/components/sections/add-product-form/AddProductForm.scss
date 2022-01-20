@@ -1,0 +1,45 @@
+.add_product_form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 50px;
+    margin: 10% auto;
+    box-shadow: 0 5px 10px #1f313421;
+
+    .input_group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 17px;
+
+    }
+
+    label {
+        margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+        border: 1px solid #e6e6e6;
+        padding: 5px;
+
+        &:focus-visible,
+        &:focus,
+        &:active {
+            outline: 1px solid #e6c9c9;
+        }
+
+        &::placeholder {
+            color: rgb(180, 180, 180)
+        }
+    }
+
+    input,
+    select {
+        height: 30px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+}

@@ -1,0 +1,26 @@
+.products_list {
+    display: flex;
+
+    .showcase {
+        width: 50%;
+        border: 1px solid;
+        min-height: 300px;
+        padding: 20px;
+
+        h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 0.6em;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+        }
+
+        .title {
+            margin-bottom: 0.3em;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    }
+}
