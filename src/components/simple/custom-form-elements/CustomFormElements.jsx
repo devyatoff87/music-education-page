@@ -1,5 +1,5 @@
-import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
+import "./CustomFormElements.scss"
 
 export function CustomInput(props) {
     const { title, ...otherProps } = props
@@ -12,13 +12,15 @@ export function CustomInput(props) {
 }
 
 export function CustomSelect(props) {
-    const { title, elements, ...otherProps } = props
+    const { title, elements, ...otherProps } = props;
+
     return (
         <div className="input_group">
             <label>{title}</label>
-            <select name='category'>
-                {elements.map((p) => {
-                    return <option>
+            <select className='category' name='category'>
+                <option disabled>Choose one:</option>
+                {elements.map((p, index) => {
+                    return <option key={index}>
                         {p.category}
                     </option>
                 })}
@@ -32,7 +34,7 @@ export function CustomTextarea(props) {
     return (
         <div className="input_group">
             <label>{title}</label>
-            <textarea {...otherProps} > </textarea>
+            <textarea {...otherProps} ></textarea>
         </div>
     )
 }

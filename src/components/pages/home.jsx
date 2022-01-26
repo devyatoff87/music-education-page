@@ -1,11 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AppContext } from '../../context/app-context'
 import AddProductForm from '../sections/add-product-form/AddProductForm';
-function Home() {
-    const { products } = useContext(AppContext);
-    return (
-        <div>
+import Notification from '../simple/alert/Notification';
+import { hideNotification } from "../../context/app-action-creators"
 
+
+function Home() {
+    const { appState, dispatch } = useContext(AppContext);
+    const { notification } = appState;
+    const { text, style } = notification
+
+    useEffect(() => {
+        return () => {
+            setTimeout(() => {
+                dispatch(hideNotification())
+            }, 3000)
+        }
+    })
+
+    return (
+        <div className='container'>
+            {notification.show && <Notification style={style} text={text} />}
             <AddProductForm />
         </div>
     )

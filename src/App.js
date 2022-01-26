@@ -9,7 +9,7 @@ import Products from "./components/pages/products"
 import Contact from "./components/pages/contact"
 import Header from './components/sections/header/Header';
 import AppState from './context/app-state';
-
+import CloseHoc from "./components/simple/close-hoc/CloseHoc"
 
 function App() {
   return (

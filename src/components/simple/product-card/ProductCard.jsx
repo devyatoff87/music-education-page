@@ -1,6 +1,6 @@
 import React from 'react'
 import "./ProductCard.scss"
-import ColumnBox from '../layout/ColumnBox'
+import ColumnBox from '../../layout/ColumnBox'
 
 function ProductCard({ otherProps }) {
     const { title, price, online, description, productImgUrl } = otherProps

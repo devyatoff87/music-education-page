@@ -3,43 +3,47 @@
     flex-direction: column;
     max-width: 400px;
     padding: 50px;
-    margin: 10% auto;
+    margin: 6% auto;
     box-shadow: 0 5px 10px #1f313421;
 
-    .input_group {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 17px;
+    .button {
+        height: 50px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #27d3d3;
+        transition: 0.16s;
+        background-color: #282828;
+        width: 40%;
+        align-self: center;
+        margin-top: 15px;
 
-    }
-
-    label {
-        margin-bottom: 6px;
-    }
-
-    input,
-    select,
-    textarea {
-        border: 1px solid #e6e6e6;
-        padding: 5px;
-
-        &:focus-visible,
-        &:focus,
-        &:active {
-            outline: 1px solid #e6c9c9;
-        }
-
-        &::placeholder {
-            color: rgb(180, 180, 180)
+        &:hover {
+            cursor: pointer;
+            background-color: #000000;
         }
     }
+}
 
-    input,
-    select {
-        height: 30px;
+
+@media only screen and (max-width: 768px) {
+    .add_product_form {
+        padding: 40px 25px;
+
+        .button {
+            height: 50px;
+            width: 50%;
+        }
     }
+}
 
-    textarea {
-        height: 100px;
+@media only screen and (max-width: 360px) {
+    .add_product_form {
+        padding: 40px 25px;
+
+        .button {
+            height: 50px;
+            width: 100%;
+        }
     }
 }

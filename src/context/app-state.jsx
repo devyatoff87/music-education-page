@@ -4,14 +4,20 @@ import products from "../data/products_DATA"
 import ACTIONS from "./app-actions"
 import reducer from './app-reducer';
 
-const initState = {
+export const initState = {
     products: products,
-    counter: 1
+    counter: 1,
+    notification: {
+        show: false,
+        text: "",
+        style: "success"
+    },
+    dropdown: false
 }
 
 function AppState({ children }) {
 
-    const [appState, dispatch] = useReducer(reducer, initState)
+    const [appState, dispatch] = useReducer(reducer, initState);
 
     return (
         <AppContext.Provider value={{ appState: appState, dispatch: dispatch }} >

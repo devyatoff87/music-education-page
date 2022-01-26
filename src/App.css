@@ -8,6 +8,7 @@
 body,
 html {
   font-family: Quicksand, Arial, Helvetica, sans-serif;
+  min-height: 110vh;
 }
 
 img {
