@@ -32,8 +32,15 @@ ul {
   }
 }
 
+h1.page_title {
+  font-family: Bitter;
+  margin-bottom: 0.8em;
+  font-size: 2.8rem;
+  color: #e03cfd;
+}
+
 .negative_margins {
-  margin: 0 -30px;
+  margin: 0 -15px;
 }
 
 @media only screen and (max-width: 768px) {

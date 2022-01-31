@@ -1,6 +1,6 @@
 import ACTIONS from "./app-actions"
 import products from "../data/products_DATA"
-import { setItemsToLocalStorage } from "../helpers/setAndGetLocalStorage"
+import { setItemsToLocalStorage } from "../helpers/helpers"
 
 
 export const addNewProduct = (productObj) =>

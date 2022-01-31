@@ -11,8 +11,6 @@ function Navbar() {
     const { appState, dispatch } = context
     const dropdown = appState.dropdown
 
-    const linkClassName = getNavLinkClassName("nav_link")
-    console.log(linkClassName);
     const toggle = () => {
         dispatch(toggleDropdown())
         dispatch(showCloseArea())
@@ -20,16 +18,16 @@ function Navbar() {
 
     return <nav>
         <ul>
-            <li className='nav_item'><NavLink to="/" className={linkClassName} >Home</NavLink></li>
-            <li className='nav_item'><NavLink to="/about" className={linkClassName} >About</NavLink></li>
+            <li className='nav_item'><NavLink to="/" className={({ isActive }) => getNavLinkClassName("nav_link", isActive)} >Home</NavLink></li>
+            <li className='nav_item'><NavLink to="/about" className={({ isActive }) => getNavLinkClassName("nav_link", isActive)} >About</NavLink></li>
             <li className='nav_item toggle' onClick={() => toggle()} >
                 <div className='toggle_items_container'>
-                    <div to="#" className={linkClassName} >Products</div>
+                    <div to="#" className={'nav_link'} >Products</div>
                     <span className={`${dropdown && "rotate-90"} curret`}>{"<"}</span>
                 </div>
                 {dropdown && <Dropdown ></Dropdown>}
             </li>
-            <li className='nav_item'><NavLink to="/contact" className={linkClassName} >Contact</NavLink></li>
+            <li className='nav_item'><NavLink to="/contact" className={({ isActive }) => getNavLinkClassName("nav_link", isActive)} >Contact</NavLink></li>
         </ul>
     </nav>
 }

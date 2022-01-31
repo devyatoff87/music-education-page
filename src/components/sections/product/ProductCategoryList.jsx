@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import ProductCard from '../product-card/ProductCard'
 import "./ProductCatergoryList.scss"
 import { AppContext } from '../../../context/app-context'
-import { getItemsFromLocalStorage } from '../../../helpers/setAndGetLocalStorage'
+import { getItemsFromLocalStorage } from '../../../helpers/helpers'
 
 function ProductCategoryList() {
     let param = useParams();
@@ -14,12 +14,10 @@ function ProductCategoryList() {
     const product = products.find((elem) => elem.category == param)
 
     return (
-        <div className='container _wide'>
-            <div className='product_section negative_margins'>{
-                product.items.map((product) =>
-                    <ProductCard key={product.id} otherProps={product} />
-                )}
-            </div>
+        <div className='product_section negative_margins'>{
+            product.items.map((product) =>
+                <ProductCard key={product.id} otherProps={product} />
+            )}
         </div>
     )
 }

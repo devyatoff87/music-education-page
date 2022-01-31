@@ -5,11 +5,11 @@ import { getNavLinkClassName } from "../../../helpers/helpers.js"
 
 
 function Dropdown() {
-    const linkClassName = getNavLinkClassName("nav_link")
+
 
     return <ul className='dropdown'>
-        <li className='nav_item'><NavLink to="products/guitar" className={linkClassName} >Guitar</NavLink></li>
-        <li className='nav_item'><NavLink to="products/recording" className={linkClassName} >Recording</NavLink></li>
+        <li className='nav_item'><NavLink to="products/guitar" className={({ isActive }) => isActive ? 'active nav_link' : 'inactive nav_link'} >Guitar</NavLink></li>
+        <li className='nav_item'><NavLink to="products/recording" className={({ isActive }) => isActive ? 'active nav_link' : 'inactive nav_link'} >Recording</NavLink></li>
     </ul>
 }
 

@@ -11,9 +11,20 @@ export const resetFormValues = ({ classNameOfForm, classNameException = "", setT
     }, setTimeOutTime)
 }
 
-export const getNavLinkClassName = (navLinkClassName) => {
-    const linkClassName = ({ isActive }) => {
-        return isActive ? 'active ' + navLinkClassName : 'inactive ' + navLinkClassName
+export const getNavLinkClassName = (navLinkClassName, isActive) => {
+    return isActive ? 'active ' + navLinkClassName : 'inactive ' + navLinkClassName
+}
+
+export const setItemsToLocalStorage = (key, value, ttl = 20) => {
+    let item = {
+        [key]: value,
+        ttl: Date.now() + 10
     }
-    return linkClassName()
+    localStorage.setItem(key, JSON.stringify(item))
+}
+
+export const getItemsFromLocalStorage = (key) => {
+    const dataObject = JSON.parse(localStorage.getItem(key))
+    const data = dataObject[key]
+    return data
 }
