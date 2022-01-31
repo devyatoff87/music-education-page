@@ -1,0 +1,27 @@
+.round_icon {
+    font-weight: 800;
+    margin-left: 27px;
+    border: 2px solid;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    transition: var(--fast);
+    border-radius: 50%;
+    color: #6e6e6e;
+    transform: rotate(45deg);
+
+    &:hover {
+        cursor: pointer;
+        color: var(--brandColor)
+    }
+
+    &.active {
+        --brandColor: #df2aff
+    }
+
+    svg {
+        position: relative;
+        top: 2.2px;
+        transform: rotate(-45deg);
+
+    }
+}

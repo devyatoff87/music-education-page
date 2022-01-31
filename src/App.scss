@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+:root {
+  --fast: 0.12s ease-in;
+  --brandColor: #df2aff
+}
+
 body,
 html {
   font-family: Quicksand, Arial, Helvetica, sans-serif;

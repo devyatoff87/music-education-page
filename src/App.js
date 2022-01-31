@@ -10,7 +10,10 @@ import Contact from "./components/pages/contact"
 import Header from './components/sections/header/Header';
 import AppState from './context/app-state';
 import MainContainer from './components/layout/MainContainer';
-import ProductCategoryList from './components/sections/product/ProductCategoryList';
+
+import Me from './components/pages/about/Me';
+import UserId from './components/pages/about/UserId';
+
 
 function App() {
   return (
@@ -20,11 +23,10 @@ function App() {
         <MainContainer >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products/*"  >
-              <Route path=":category" element={<Products />} />
-            </Route>
-            <Route path="/contact" element={<Contact />} />
+            <Route path="about" element={<About />} />
+            <Route path="products/:category" element={<Products />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<div>Error 404</div>} />
           </Routes>
         </MainContainer>
       </Router>

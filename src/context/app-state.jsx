@@ -12,7 +12,8 @@ export const initState = {
         style: "success"
     },
     dropdown: false,
-    closeArea: false
+    closeArea: false,
+    cart: false
 }
 
 function AppState({ children }) {

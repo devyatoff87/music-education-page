@@ -4,19 +4,18 @@ import "./Header.scss"
 import Navbar from '../navbar/Navbar'
 import CloseArea from "../../simple/CloseArea"
 import { AppContext } from '../../../context/app-context'
-import { hideCloseArea, hideDropdown } from '../../../context/app-action-creators'
+import { hideCart, hideCloseArea, hideDropdown } from '../../../context/app-action-creators'
 
 function Header() {
     const context = useContext(AppContext);
     const { dispatch, appState } = context;
-    const { dropdown } = appState
+    const { dropdown, closeArea, cart } = appState
 
     const onHideHandle = () => {
         dispatch(hideDropdown())
         dispatch(hideCloseArea())
+        dispatch(hideCart())
     }
-
-
 
     return (
         <>
@@ -30,6 +29,7 @@ function Header() {
                     <Navbar></Navbar>
                 </div>
                 {dropdown && <CloseArea onCallbackClick={onHideHandle}></CloseArea>}
+                {cart && <CloseArea onCallbackClick={onHideHandle}></CloseArea>}
             </div>
         </>
     )

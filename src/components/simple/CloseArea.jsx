@@ -8,10 +8,8 @@ const styles = {
     left: 0,
 }
 
-function CloseArea({ children, onCallbackClick }) {
-    return <div style={styles} onClick={() => onCallbackClick()} className='close_hoc'>
-        {children}
-    </div>;
+function CloseArea({ onCallbackClick }) {
+    return <div style={styles} onClick={() => onCallbackClick()} className='close_hoc'></div>
 }
 
 export default CloseArea;

@@ -56,6 +56,22 @@ export const reducer = (state, action) => {
             return {
                 ...state, closeArea: false
             }
+
+        //HIDE SHOW CART
+        case (ACTIONS.SHOW_CART):
+            return {
+                ...state, cart: true
+            }
+
+        case (ACTIONS.TOGGLE_CART):
+            return {
+                ...state, cart: state.cart ? false : true
+            }
+
+        case (ACTIONS.HIDE_CART):
+            return {
+                ...state, cart: false
+            }
     }
 }
 

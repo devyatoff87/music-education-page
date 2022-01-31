@@ -54,6 +54,16 @@ export const hideCloseArea = () => (
     { type: ACTIONS.HIDE_CLOSE_AREA }
 )
 
+export const showCart = () => (
+    { type: ACTIONS.SHOW_CART }
+)
 
+export const toggleCart = () => (
+    { type: ACTIONS.TOGGLE_CART }
+)
+
+export const hideCart = () => (
+    { type: ACTIONS.HIDE_CART }
+)
 
 
