@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import ProductCard from '../../simple/product-card/ProductCard'
+import ProductCard from '../product-card/ProductCard'
 import "./ProductCatergoryList.scss"
+import { AppContext } from '../../../context/app-context'
+import { getItemsFromLocalStorage } from '../../../helpers/setAndGetLocalStorage'
 
-function ProductCategoryList({ products }) {
+function ProductCategoryList() {
     let param = useParams();
     param = Object.values(param)[0];
-    const product = products.find((el) => el.category == param)
+
+    const products = getItemsFromLocalStorage("products")
+
+    const product = products.find((elem) => elem.category == param)
 
     return (
-        <div className='product_section'>{
-            product.items.map((product) =>
-                <ProductCard key={product.id} otherProps={product} />
-            )}
+        <div className='container _wide'>
+            <div className='product_section negative_margins'>{
+                product.items.map((product) =>
+                    <ProductCard key={product.id} otherProps={product} />
+                )}
+            </div>
         </div>
     )
 }

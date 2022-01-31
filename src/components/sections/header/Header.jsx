@@ -1,21 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Header.scss"
 import Navbar from '../navbar/Navbar'
-import CloseHoc from '../../simple/close-hoc/CloseHoc'
+import CloseArea from "../../simple/CloseArea"
 import { AppContext } from '../../../context/app-context'
-import { hideDropdown } from '../../../context/app-action-creators'
+import { hideCloseArea, hideDropdown } from '../../../context/app-action-creators'
 
 function Header() {
     const context = useContext(AppContext);
-    const { dispatch } = context;
+    const { dispatch, appState } = context;
+    const { dropdown } = appState
 
     const onHideHandle = () => {
         dispatch(hideDropdown())
+        dispatch(hideCloseArea())
     }
 
-    return (
 
+
+    return (
         <>
             <div className='header'>
                 <div className='header_inner'>
@@ -26,7 +29,7 @@ function Header() {
                     </div>
                     <Navbar></Navbar>
                 </div>
-                <CloseHoc onCallbackClick={onHideHandle}></CloseHoc>
+                {dropdown && <CloseArea onCallbackClick={onHideHandle}></CloseArea>}
             </div>
         </>
     )

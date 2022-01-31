@@ -5,13 +5,19 @@ import { getItems } from "./app-reducer-helpers"
 
 export const reducer = (state, action) => {
     switch (action.type) {
-
         //PRODUCTS
         case (ACTIONS.ADD_NEW_PRODUCT):
             return {
                 ...state, products: (() => {
                     let items = getItems(action.payload, state.products)
                     return items
+                })()
+            }
+        case (ACTIONS.INIT_PRODUCTS):
+            return {
+                ...state, products: (() => {
+                    console.log(action.payload);
+                    return action.payload
                 })()
             }
 
@@ -39,6 +45,16 @@ export const reducer = (state, action) => {
         case (ACTIONS.HIDE_DROPDOWN):
             return {
                 ...state, dropdown: false
+            }
+
+        //CLOSE AREA
+        case (ACTIONS.SHOW_CLOSE_AREA):
+            return {
+                ...state, closeArea: true
+            }
+        case (ACTIONS.HIDE_CLOSE_AREA):
+            return {
+                ...state, closeArea: false
             }
     }
 }

@@ -12,6 +12,8 @@ export const resetFormValues = ({ classNameOfForm, classNameException = "", setT
 }
 
 export const getNavLinkClassName = (navLinkClassName) => {
-    const linkClassName = ({ isActive }) => (isActive ? 'active ' + navLinkClassName : 'inactive ' + navLinkClassName)
-    return linkClassName
+    const linkClassName = ({ isActive }) => {
+        return isActive ? 'active ' + navLinkClassName : 'inactive ' + navLinkClassName
+    }
+    return linkClassName()
 }

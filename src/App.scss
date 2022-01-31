@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Outfit&family=Quicksand:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+  min-height: 110vh;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 77%;
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  &._wide {
+    width: 100%;
+  }
+}
+
+.negative_margins {
+  margin: 0 -30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+
+    &._wide {
+      width: 100%;
+    }
+  }
+
+  .negative_margins {
+    margin: 0 0;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .container {
+    width: 100%;
+    padding: 0 7.5px;
+
+    &._wide {
+      width: 100%;
+    }
+  }
+
+  .negative_margins {
+    margin: 0 0;
+  }
+}

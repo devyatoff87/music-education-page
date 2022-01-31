@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import Dropdown from '../dropdown/Dropdown';
 import "./Navbar_styles.scss"
 import { getNavLinkClassName } from "../../../helpers/helpers.js"
-import { toggleDropdown } from "../../../context/app-action-creators"
+import { showCloseArea, toggleDropdown } from "../../../context/app-action-creators"
 import { AppContext } from '../../../context/app-context';
 
 function Navbar() {
@@ -12,11 +12,11 @@ function Navbar() {
     const dropdown = appState.dropdown
 
     const linkClassName = getNavLinkClassName("nav_link")
-
+    console.log(linkClassName);
     const toggle = () => {
         dispatch(toggleDropdown())
+        dispatch(showCloseArea())
     }
-
 
     return <nav>
         <ul>

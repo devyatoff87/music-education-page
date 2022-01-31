@@ -6,15 +6,13 @@ import { AppContext } from '../../context/app-context'
 
 function Products() {
     let param = useParams();
-    param = Object.values(param)[0];
+    const category = Object.values(param)[0];
 
-    const context = useContext(AppContext);
-    const products = context.appState.products
     return (
         <div className='container'>
             <Routes>
-                <Route path="/" element={<ProductList products={products} />} />
-                <Route path={param} element={<ProductCategoryList products={products} />} />
+                {/* <Route path="/" element={<ProductList products={products} />} /> */}
+                <Route path={category} element={<ProductCategoryList category={category} />} />
             </Routes>
         </div>
     )

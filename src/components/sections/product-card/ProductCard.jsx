@@ -5,7 +5,7 @@ import ColumnBox from '../../layout/ColumnBox'
 function ProductCard({ otherProps }) {
     const { title, price, online, description, productImgUrl } = otherProps
     return (
-        <ColumnBox boxStyle={"large"}>
+        <ColumnBox styledWidth={"33.33%"}>
             <div className='product_card'>
                 <img src={productImgUrl} alt='' />
                 <div className='product_details'>

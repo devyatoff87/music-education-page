@@ -1,18 +1,18 @@
 import React, { useReducer } from 'react';
 import { AppContext } from './app-context';
-import products from "../data/products_DATA"
 import ACTIONS from "./app-actions"
 import reducer from './app-reducer';
 
 export const initState = {
-    products: products,
+    products: [],
     counter: 1,
     notification: {
         show: false,
         text: "",
         style: "success"
     },
-    dropdown: false
+    dropdown: false,
+    closeArea: false
 }
 
 function AppState({ children }) {
