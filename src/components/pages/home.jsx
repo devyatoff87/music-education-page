@@ -10,9 +10,7 @@ function Home() {
     const { text, style } = notification
 
     useEffect(() => {
-        let a = initProducts(dispatch)
-        console.log(a);
-        a();
+        initProducts(dispatch)()
     }, [])
 
     useEffect(() => {

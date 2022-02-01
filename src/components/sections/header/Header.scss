@@ -1,5 +1,6 @@
 .header {
-    background: #ececec;
+    background: var(--light_1);
+    box-shadow: var(--shad_1);
     padding: 40px 50px;
 
     .header_inner {

@@ -16,7 +16,6 @@ export const reducer = (state, action) => {
         case (ACTIONS.INIT_PRODUCTS):
             return {
                 ...state, products: (() => {
-                    console.log(action.payload);
                     return action.payload
                 })()
             }

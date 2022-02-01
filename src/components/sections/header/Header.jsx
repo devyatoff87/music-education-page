@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Header.scss"
-import Navbar from '../navbar/Navbar'
+import Navbar from '../navbars/main/Navbar'
 import CloseArea from "../../simple/CloseArea"
 import { AppContext } from '../../../context/app-context'
 import { hideCart, hideCloseArea, hideDropdown } from '../../../context/app-action-creators'

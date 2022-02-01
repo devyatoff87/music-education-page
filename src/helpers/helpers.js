@@ -1,3 +1,4 @@
+
 export const resetFormValues = ({ classNameOfForm, classNameException = "", setTimeOutTime = 0 }) => {
     const elems = document.querySelector(classNameOfForm).elements;
 
@@ -11,8 +12,8 @@ export const resetFormValues = ({ classNameOfForm, classNameException = "", setT
     }, setTimeOutTime)
 }
 
-export const getNavLinkClassName = (navLinkClassName, isActive) => {
-    return isActive ? 'active ' + navLinkClassName : 'inactive ' + navLinkClassName
+export const getNLClassName = (navLinkClassName, active) => {
+    return active ? 'active ' + navLinkClassName : 'inactive ' + navLinkClassName
 }
 
 export const setItemsToLocalStorage = (key, value, ttl = 20) => {
@@ -28,3 +29,12 @@ export const getItemsFromLocalStorage = (key) => {
     const data = dataObject[key]
     return data
 }
+
+export const fetchData = (url) => {
+    fetch(url)
+        .then(resp => {
+            return JSON.parse(resp)
+        })
+        .then(data => console.log(data))
+}
+

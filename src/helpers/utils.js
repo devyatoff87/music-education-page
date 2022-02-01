@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const products = [
     {
         showcaseImgUrl: "",
@@ -95,4 +97,18 @@ const products = [
     },
 ]
 
-export default products
+const createAndSaveJson = (obj, fileName = "file.json") => {
+
+    let fileContent = JSON.stringify(obj)
+
+    fs.writeFile(fileName, fileContent, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log("JSON data is saved.");
+    });
+}
+
+
+//createAndSaveJson(products, "products.json")
+

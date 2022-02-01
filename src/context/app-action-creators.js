@@ -23,10 +23,13 @@ const fetchFailure = (err) => {
 
 export const initProducts = (dispatch) => {
     return () => {
-        setTimeout(() => {
-            dispatch(fetchSuccess(products));
-            setItemsToLocalStorage("products", products)
-        }, 1000)
+        !localStorage.getItem("products") && fetch("http://localhost:3004/products")
+            .then(response => response.json())
+            .then(data => {
+                dispatch(fetchSuccess(data))
+                setItemsToLocalStorage("products", data)
+            })
+            .catch((err) => console.log(err))
     }
 }
 
