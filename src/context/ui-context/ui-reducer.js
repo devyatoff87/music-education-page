@@ -1,25 +1,9 @@
-import { act } from "react-dom/cjs/react-dom-test-utils.production.min"
-import ACTIONS from "./app-actions"
-import { getItems } from "./app-reducer-helpers"
+import ACTIONS from "./ui-actions"
+import { getItems } from "./ui-reducer-helpers"
 
 
 export const reducer = (state, action) => {
     switch (action.type) {
-        //PRODUCTS
-        case (ACTIONS.ADD_NEW_PRODUCT):
-            return {
-                ...state, products: (() => {
-                    let items = getItems(action.payload, state.products)
-                    return items
-                })()
-            }
-        case (ACTIONS.INIT_PRODUCTS):
-            return {
-                ...state, products: (() => {
-                    return action.payload
-                })()
-            }
-
         //NOTIFICATIONS
         case (ACTIONS.SHOW_NOTIFICATION):
             return {

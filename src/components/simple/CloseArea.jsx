@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const styles = {
     width: "100%",
@@ -9,6 +9,7 @@ const styles = {
 }
 
 function CloseArea({ onCallbackClick }) {
+
     return <div style={styles} onClick={() => onCallbackClick()} className='close_hoc'></div>
 }
 

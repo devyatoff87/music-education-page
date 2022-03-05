@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
+import ContextCombiner from "./contextCombiner"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextCombiner>
+      <App />
+    </ContextCombiner>
   </React.StrictMode>,
   document.getElementById('root')
 );

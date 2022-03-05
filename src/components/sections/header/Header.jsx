@@ -1,15 +1,16 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Header.scss"
 import Navbar from '../navbars/main/Navbar'
 import CloseArea from "../../simple/CloseArea"
-import { AppContext } from '../../../context/app-context'
-import { hideCart, hideCloseArea, hideDropdown } from '../../../context/app-action-creators'
+import { UIContext } from '../../../context/ui-context/ui-context'
+import { hideCart, hideCloseArea, hideDropdown } from '../../../context/ui-context/ui-action-creators'
+import AuthStatusIcon from '../auth-area/auth-icon'
 
 function Header() {
-    const context = useContext(AppContext);
-    const { dispatch, appState } = context;
-    const { dropdown, closeArea, cart } = appState
+    const context = useContext(UIContext);
+    const { dispatch, uiState } = context;
+    const { dropdown, closeArea, cart } = uiState
 
     const onHideHandle = () => {
         dispatch(hideDropdown())
@@ -26,7 +27,10 @@ function Header() {
                             LOGO
                         </NavLink>
                     </div>
-                    <Navbar></Navbar>
+                    <div className='right-side'>
+                        <Navbar></Navbar>
+                        <AuthStatusIcon />
+                    </div>
                 </div>
                 {dropdown && <CloseArea onCallbackClick={onHideHandle}></CloseArea>}
                 {cart && <CloseArea onCallbackClick={onHideHandle}></CloseArea>}

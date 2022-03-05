@@ -1,24 +1,17 @@
-import React, { useContext } from 'react'
-import { useParams } from 'react-router-dom'
-import ProductCard from '../product-card/ProductCard'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import "./CoursesList_style.scss"
-import { AppContext } from '../../../context/app-context'
-import { getItemsFromLocalStorage } from '../../../helpers/helpers'
+import ProductCard from "../product-card/ProductCard"
+import useGetProducts from '../../../helpers/useGetProducts';
 
 function CoursesList() {
-    // let param = useParams();
-    // param = Object.values(param)[0];
 
-    const products = getItemsFromLocalStorage("products")
-
-    // const product = products.find((elem) => elem.category == param)
+    let products = useGetProducts("guitar")
 
     return (
         <div className='product_section negative_margins'>
-            {
-                products[0].items.map((product) =>
-                    <ProductCard key={product.id} otherProps={product} />
-                )}
+            {products && products.map((product) => {
+                return <ProductCard key={product.id} otherProps={product} />
+            })}
         </div>
     )
 }

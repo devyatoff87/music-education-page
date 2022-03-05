@@ -38,3 +38,9 @@ export const fetchData = (url) => {
         .then(data => console.log(data))
 }
 
+export const fetchF = async (url) => {
+    return fetch(url)
+        .then(response => response.json())
+        .then(data => data)
+        .catch((err) => console.log(err))
+}

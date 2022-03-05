@@ -18,7 +18,7 @@ export function CustomSelect(props) {
         <div className="input_group">
             <label>{title}</label>
             <select className='category' name='category'>
-                <option disabled selected>Choose one:</option>
+                <option disabled >Choose one:</option>
                 {elements.map((p, index) => {
                     return <option key={index}>
                         {p.category}

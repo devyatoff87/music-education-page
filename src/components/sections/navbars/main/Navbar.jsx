@@ -3,18 +3,18 @@ import { NavLink } from 'react-router-dom';
 import Dropdown from '../../dropdown/Dropdown';
 import "./Navbar_styles.scss"
 import { getNLClassName } from "../../../../helpers/helpers.js"
-import { showCart, showCloseArea, toggleDropdown, toggleCart } from "../../../../context/app-action-creators"
-import { AppContext } from '../../../../context/app-context';
+import { showCart, showCloseArea, toggleDropdown, toggleCart } from "../../../../context/ui-context/ui-action-creators"
+import { UIContext } from '../../../../context/ui-context/ui-context';
 import RoundIcon from '../../../simple/round-icon/RoundIcon';
 import { HiShoppingCart } from "/node_modules/react-icons/hi/index.js"
 import Cart from '../../cart/Cart';
 
 
 function Navbar() {
-    const context = useContext(AppContext)
-    const { appState, dispatch } = context
-    const dropdown = appState.dropdown
-    const cart = appState.cart
+    const context = useContext(UIContext)
+    const { uiState, dispatch } = context
+    const dropdown = uiState.dropdown
+    const cart = uiState.cart
     return <nav>
         <ul>
             <li className='nav_item'><NavLink to="/" className={({ isActive }) => getNLClassName("nav_link", isActive)} >Home</NavLink></li>
